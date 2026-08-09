@@ -59,3 +59,7 @@ Designing the core domain model.
 - Chat
 - ChatParticipant
 - Message
+
+## Documentation
+
+See the docs folder for architecture decisions and technical documentation.
