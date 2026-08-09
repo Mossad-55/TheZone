@@ -46,3 +46,16 @@ Database Access and EF Core Configurations.
 - Solution Created
 - Projects Created
 - References Configured
+
+## Sprint 2
+
+### Goal
+
+Designing the core domain model.
+
+### Planned Entities
+
+- User
+- Chat
+- ChatParticipant
+- Message
