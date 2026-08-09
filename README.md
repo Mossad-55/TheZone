@@ -16,15 +16,28 @@ Production-Oriented Real-Time Messaging Backend.
 ## Architecture
 
 - Clean Architecture
+- CQRS
+- MediatR
 
-### Projects
+## Projects
 
-- TheZone.Api
-- TheZone.Application
-- TheZone.Contracts
-- TheZone.Domain
-- TheZone.Infrastructure
-- TheZone.Persistence
+### TheZone.Api
+Presentation Layer
+
+### TheZone.Application
+Application Layer containing CQRS Commands, Queries and Business Rules.
+
+### TheZone.Contracts
+Shared Contracts, DTOs and Response Models.
+
+### TheZone.Domain
+Core Domain Entities and Business Rules.
+
+### TheZone.Infrastructure
+External Services Integrations.
+
+### TheZone.Persistence
+Database Access and EF Core Configurations.
 
 ## Progress
 
