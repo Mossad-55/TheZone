@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TheZone.Api/TheZone.Api.csproj" />
+    <Project Path="src/TheZone.Application/TheZone.Application.csproj" />
+    <Project Path="src/TheZone.Contracts/TheZone.Contracts.csproj" />
+    <Project Path="src/TheZone.Domain/TheZone.Domain.csproj" />
+    <Project Path="src/TheZone.Infrastructure/TheZone.Infrastructure.csproj" />
+    <Project Path="src/TheZone.Persistence/TheZone.Persistence.csproj" />
+  </Folder>
+</Solution>
