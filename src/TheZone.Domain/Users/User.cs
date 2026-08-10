@@ -39,9 +39,9 @@ public class User : AuditableEntity
             throw new ArgumentException("Display name is required and cannot be null or empty.", nameof(displayName));
 
         DisplayName = displayName.Trim();
-        Bio = bio;
-        Email = email;
-        ProfilePictureUrl = profilePictureUrl;
+        Bio = bio?.Trim();
+        Email = email?.Trim();
+        ProfilePictureUrl = profilePictureUrl?.Trim();
 
         MarkAsUpdated();
     }
