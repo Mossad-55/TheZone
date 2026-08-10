@@ -20,3 +20,11 @@
 - Stores participant role.
 - Stores joined date.
 - Stores last read message.
+
+## Domain Decisions
+
+- Chat is the Aggregate Root.
+- Chat owns Messages and ChatParticipants.
+- Private chats support exactly two members.
+- Group chats support participant roles (Owner, Admin, Member).
+- Entity identifiers are generated inside the Domain using Guid.NewGuid().
