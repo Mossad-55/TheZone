@@ -10,34 +10,31 @@ public sealed class UserConfiguration : IEntityTypeConfiguration<User>
     {
         builder.ToTable("Users");
 
-        builder.HasKey(u => u.Id);
+        builder.HasKey(x => x.Id);
 
-        builder.Property(u => u.PhoneNumber)
+        builder.Property(x => x.PhoneNumber)
             .IsRequired()
             .HasMaxLength(20);
         
-        builder.HasIndex(u => u.PhoneNumber)
+        builder.HasIndex(x => x.PhoneNumber)
             .IsUnique();
         
-        builder.Property(u => u.DisplayName)
+        builder.Property(x => x.DisplayName)
             .IsRequired()
-            .HasMaxLength(100);
+            .HasMaxLength(50);
         
-        builder.HasIndex(u => u.DisplayName);
+        builder.HasIndex(x => x.DisplayName);
 
-        builder.Property(u => u.Email)
+        builder.Property(x => x.Email)
             .HasMaxLength(255);
 
-        builder.HasIndex(u => u.Email)
+        builder.HasIndex(x => x.Email)
             .IsUnique();
 
-        builder.Property(u => u.Bio)
+        builder.Property(x => x.Bio)
             .HasMaxLength(500);
 
-        builder.Property(u => u.ProfilePictureUrl)
-            .HasMaxLength(2048); // Maximum URL length
-
-        builder.Property(u => u.CreatedAt)
-            .IsRequired();
+        builder.Property(x => x.ProfilePictureUrl)
+            .HasMaxLength(2048);
     }
 }
