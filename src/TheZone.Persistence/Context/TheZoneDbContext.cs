@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using TheZone.Application.Abstractions.Data;
 using TheZone.Domain.Chats;
 using TheZone.Domain.Users;
 
 namespace TheZone.Persistence.Context;
 
-public sealed class TheZoneDbContext : DbContext
+public sealed class TheZoneDbContext : DbContext, IApplicationDbContext
 {
     public TheZoneDbContext(DbContextOptions<TheZoneDbContext> options) 
         : base(options)

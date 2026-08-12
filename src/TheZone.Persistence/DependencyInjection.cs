@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TheZone.Application.Abstractions.Data;
 using TheZone.Persistence.Context;
 
 namespace TheZone.Persistence;
@@ -13,6 +14,9 @@ public static class DependencyInjection
         {
             options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
         });
+
+        services.AddScoped<IApplicationDbContext>(provider =>
+            provider.GetRequiredService<TheZoneDbContext>());
 
         return services;
     }
