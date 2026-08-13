@@ -75,14 +75,22 @@ public class Chat : AuditableEntity
         _participants.Add(participant);
     }
 
-    public void AddMessage(Message message)
+    public Message AddMessage(
+        Guid senderId,
+        MessageType messageType,
+        string? content,
+        string? mediaUrl)
     {
-        if(message == null)
-        {
-            throw new ArgumentNullException("Message cannot be null.", nameof(message));
-        }
+        var message = Message.Create(
+            this.Id,
+            senderId,
+            messageType,
+            content,
+            mediaUrl);
 
         _messages.Add(message);
+
+        return message;
     }
     public void UpdateGroupInfo(string name, string? pictureUrl)
     {

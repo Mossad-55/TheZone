@@ -15,4 +15,16 @@ public static class ChatErrors
             "Chat.ParticipantNotFound",
             "One or more participants were not found."
         );
+    
+    public static readonly Error ChatNotFound = 
+        new(
+            "Chat.NotFound",
+            "Chat was not found."
+        );
+
+    public static readonly Error NotParticipant = 
+        new(
+            "Chat.NotParticipant",
+            "User is not a participant in this chat."
+        );
 }

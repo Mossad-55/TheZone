@@ -2,9 +2,9 @@ using FluentValidation;
 
 namespace TheZone.Application.Features.Chats.Commands.CreatePrivateChat;
 
-public sealed class CreatePrivateChatValidator : AbstractValidator<CreatePrivateChatCommand>
+public sealed class CreatePrivateChatCommandValidator : AbstractValidator<CreatePrivateChatCommand>
 {
-    public CreatePrivateChatValidator()
+    public CreatePrivateChatCommandValidator()
     {
         RuleFor(x => x.CurrentUserId)
             .NotEmpty();

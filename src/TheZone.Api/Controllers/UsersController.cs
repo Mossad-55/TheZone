@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TheZone.Application.Features.Chats.Queries.GetUserChats;
 using TheZone.Application.Features.Users.Commands.CreateUser;
 
 namespace TheZone.Api.Controllers;
@@ -35,5 +36,22 @@ public sealed class UsersController : ControllerBase
             nameof(Create),
             new { id = result.Value },
             result.Value);
+    }
+
+    [HttpGet("{userId:guid}/chats")]
+    public async Task<IActionResult> GetChats(
+        Guid userId,
+        CancellationToken cancellationToken)
+    {
+        var query = new GetUserChatsQuery(userId);
+
+        var result = await _sender.Send(query, cancellationToken);
+
+        if (result.IsFailure)
+        {
+            return BadRequest(result.Error);
+        }
+
+        return Ok(result.Value);
     }
 }

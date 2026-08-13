@@ -8,12 +8,12 @@ using TheZone.Domain.Enums;
 
 namespace TheZone.Application.Features.Chats.Commands.CreatePrivateChat;
 
-public sealed class CreatePrivateChatHandler
+public sealed class CreatePrivateChatCommandHandler
     : ICommandHandler<CreatePrivateChatCommand, Guid>
 {
     private readonly IApplicationDbContext _context;
 
-    public CreatePrivateChatHandler(IApplicationDbContext context)
+    public CreatePrivateChatCommandHandler(IApplicationDbContext context)
     {
         _context = context;
     }
